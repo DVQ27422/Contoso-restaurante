@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <sript></sript>
+    <title>Contoso restaurante - Página principal</title>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        .portada {
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="./index.html"></ahref><img src="./img/637211.png" alt="Logo del restaurante" height="50"></a>
+        <ul>
+            <li><a class="button-menu active" href="./index.html">Inicio</a></li>
+            <li><a class="button-menu" href="./menu.html">Menú</a></li>
+            <li><a class="button-menu" href="./reserva.html">Reservar</a></li>
+            <li><a class="button-menu" href="./enlaces.html">Enlaces</a></li>
+        </ul>
+        <ul>
+            <li><a class="social-media" href="https://facebook.com"><img width="65%" src="img/social/Facebook 2x.png" alt="Facebook"></a></li>
+            <li><a class="social-media" href="https://instagram.com"><img width="65%" src="img/social/Instagram 2x.png" alt="Instagram"></a></li>
+            <li><a class="social-media" href="https://twitter.com"><img width="65%" src="img/social/icon-MSCOM-X-64x64.png" alt="Twitter"></a></li>
+            <li><a class="social-media" href="https://linkedin.com"><img width="65%" src="img/social/Linkedin 2x.png" alt="LinkedIn"></a></li>
+        </ul>
+    </nav>
+    <div class="portada">
+        <h1>Contoso</h1>
+        <p>Descubre la mejor carne y el marisco más fresco en Restaurante Contoso. ¡Una experiencia culinaria inigualable!</p>
+    </div>
+    <div class="background-video">
+        <video autoplay muted loop id="background-video">
+            <source src="./vid/Background.mp4" type="video/mp4">
+            Tu navegador no soporta el fondo animado. Contoso recomienda que use Microsoft Edge <a href="https://aka.ms/MSEdge">aka.ms/MSEdge</a>
+        </video>
+    </div>
+    <div class="background-content">
+        <div class="content content1">
+            <div class="info">
+                <h2>Sobre Nosotros</h2>
+                <p>Descubre nuestra deliciosa cocina con ingredientes frescos y recetas únicas.</p>
+            </div>
+            <div class="imagen">
+                <img class="responsive-img" src="./img/2020-10-22.jpg" alt="Interior acogedor del restaurante">
+            </div>
+        </div>
+        <div class="content">
+            <h2>Nuestro Menú</h2>
+            <p>Explora nuestra variedad de platos que deleitan el paladar.</p>
+            <img class="responsive-img" src="./img/download.jpg" alt="Plato gourmet del menú">
+        </div>
+        <div class="content">
+            <h2>Visítanos</h2>
+            <p>Estamos ubicados en el corazón de la ciudad, listos para atenderte.</p>
+            <img class="responsive-img" src="./img/bogavante.jpg" alt="Mapa de ubicación del restaurante">
+            
+            
+            <div style="display: flex; justify-content: center; align-items: center; height: 400px; width: 100%;">
+                <div id="bing-map" style="width: 100%; height: 400px;"></div>
+            </div>
+            <script>
+                function loadMap() {
+                    var map = new Microsoft.Maps.Map(document.getElementById("bing-map"), {
+                        zoom: 16,
+                        mapTypeId: Microsoft.Maps.MapTypeId.aerial
+                    });
+                    Microsoft.Maps.loadModule("Microsoft.Maps.Search", function () {
+                        var searchManager = new Microsoft.Maps.Search.SearchManager(map);
+                        var requestOptions = {
+                            bounds: map.getBounds(),
+                            where: "La Chalana, Avenida de Conde de Guadalhorce 95, 33401, Avilés (Asturias)",
+                            callback: function (answer, userData) {
+                                map.setView({
+                                    center: new Microsoft.Maps.Location(answer.results[0].location.latitude, answer.results[0].location.longitude)
+                                });
+                                map.entities.push(new Microsoft.Maps.Pushpin(answer.results[0].location));
+                            }
+                        };
+                        searchManager.geocode(requestOptions);
+                    });
+                }
+            </script>
+            <script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?key=AkLj1p_g1w7lFb8lJZ-XnicObnu2-ydEpmn6eryraluxl_x3bDo0Jx6w58b7ZJt2&callback=loadMap" async defer></script>
+            <a href="https://bingmapsgenerator.github.io" style="display:none;">Microsoft Bing Maps</a>
+        
+        
+        
+        </div>
+    </div>
+    
+    
+    <footer class="footer" style="display: flex; align-items: center; justify-content: space-between; flex-direction: column;">
+        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <img src="./img/637211.png" alt="Logo del restaurante" height="50">
+            <p>Hecho por Daniel Seisdedos Pérez</p>
+            <p>Restaurante Fluent - Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>
