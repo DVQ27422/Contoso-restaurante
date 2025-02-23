@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <sript></sript>
+    <title>Contoso restaurante - Reserva</title>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        .portada {
+            background-image: url('./img/Bogavante-y-centollo-1024x557.jpg');
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="./img/637211.png" alt="Logo del restaurante" height="50">
+        <ul>
+            <li><a class="button-menu" href="./index.html">Inicio</a></li>
+            <li><a class="button-menu" href="./menu.html">Menú</a></li>
+            <li><a class="button-menu active" href="./reserva.html">Reservar</a></li>
+            <li><a class="button-menu" href="./enlaces.html">Enlaces</a></li>
+        </ul>
+        <ul>
+            <li><a class="social-media" href="https://facebook.com"><img width="65%" src="img/social/Facebook 2x.png" alt="Facebook"></a></li>
+            <li><a class="social-media" href="https://instagram.com"><img width="65%" src="img/social/Instagram 2x.png" alt="Instagram"></a></li>
+            <li><a class="social-media" href="https://twitter.com"><img width="65%" src="img/social/icon-MSCOM-X-64x64.png" alt="Twitter"></a></li>
+            <li><a class="social-media" href="https://linkedin.com"><img width="65%" src="img/social/Linkedin 2x.png" alt="LinkedIn"></a></li>
+        </ul>
+    </nav>
+    <div class="portada">
+        <h1>Reservar</h1>
+        <p>Descubre la mejor carne y el marisco más fresco en Restaurante Fluent. ¡Una experiencia culinaria inigualable!</p>
+    </div>
+    <div class="background-video">
+        <video autoplay muted loop id="background-video">
+            <source src="./vid/Background.mp4" type="video/mp4">
+            Tu navegador no soporta el fondo animado. Restaurante Fluent recomienda que use Microsoft Edge <a href="https://aka.ms/MSEdge">aka.ms/MSEdge</a>
+        </video>
+    </div>
+    <div class="background-content">
+        <h1>Reserva </h1>
+        <form action="/action.php" target="_blank" method="post">
+            <table>
+                <tr>
+                    <td><label for="name">Nombre:</label></td>
+                    <td><input type="text" id="name" name="name" required></td>
+                </tr>
+                <tr>
+                    <td><label for="phone">Teléfono:</label></td>
+                    <td><input type="tel" id="phone" name="phone" required></td>
+                </tr>
+                <tr>
+                    <td><label for="date">Fecha de reserva:</label></td>
+                    <td><input type="date" id="date" name="date" required></td>
+                </tr>
+                <tr>
+                    <td><label for="time">Hora de reserva:</label></td>
+                    <td><input type="time" id="time" name="time" required></td>
+                </tr>
+                <tr>
+                    <td><label for="guests">Número de comensales:</label></td>
+                    <td><input type="number" id="guests" name="guests" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button type="submit">Reservar</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    
+    
+    <footer class="footer" style="display: flex; align-items: center; justify-content: space-between; flex-direction: column;">
+        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <img src="./img/637211.png" alt="Logo del restaurante" height="50">
+            <p>Hecho por Daniel Seisdedos Pérez</p>
+            <p>Restaurante Fluent - Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>
