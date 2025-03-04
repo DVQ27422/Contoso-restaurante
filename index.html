@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <sript></sript>
+    <meta charset="UTF-8">
     <title>Contoso restaurante - Página principal</title>
+    <link rel="icon" href="img\favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles.css">
-    <style>
-        .portada {
-        }
-    </style>
 </head>
 <body>
     <nav>
-        <a href="./index.html"></ahref><img src="./img/637211.png" alt="Logo del restaurante" height="50"></a>
-        <ul>
-            <li><a class="button-menu active" href="./index.html">Inicio</a></li>
-            <li><a class="button-menu" href="./menu.html">Menú</a></li>
-            <li><a class="button-menu" href="./reserva.html">Reservar</a></li>
-            <li><a class="button-menu" href="./enlaces.html">Enlaces</a></li>
-        </ul>
-        <ul>
-            <li><a class="social-media" href="https://facebook.com"><img width="65%" src="img/social/Facebook 2x.png" alt="Facebook"></a></li>
-            <li><a class="social-media" href="https://instagram.com"><img width="65%" src="img/social/Instagram 2x.png" alt="Instagram"></a></li>
-            <li><a class="social-media" href="https://twitter.com"><img width="65%" src="img/social/icon-MSCOM-X-64x64.png" alt="Twitter"></a></li>
-            <li><a class="social-media" href="https://linkedin.com"><img width="65%" src="img/social/Linkedin 2x.png" alt="LinkedIn"></a></li>
-        </ul>
+        <a href="./index.html"><img src="./img/637211.png" alt="Logo del restaurante" height="50"></a>
+        <button class="menu-toggle">☰</button>
+        <div class="menu-container">
+            <ul class="menu">
+                <li><a class="button-menu active" href="./index.html">Inicio</a></li>
+                <li><a class="button-menu" href="./menu.html">Menú</a></li>
+                <li><a class="button-menu" href="./reserva.html">Reservar</a></li>
+            </ul>
+        </div>
     </nav>
     <div class="portada">
         <h1>Contoso</h1>
@@ -31,71 +24,79 @@
     </div>
     <div class="background-video">
         <video autoplay muted loop id="background-video">
-            <source src="https://cdn.discordapp.com/attachments/1121920591704895598/1343344982823534642/Background.mp4?ex=67bcef02&is=67bb9d82&hm=eb236a993f3c1e1fbae2f3fcd4e1368a17794643d844da1fdf5ef70f9fc88cba&" type="video/mp4">
+            <source src="./vid/Background.webm" type="video/mp4">
             Tu navegador no soporta el fondo animado. Contoso recomienda que use Microsoft Edge <a href="https://aka.ms/MSEdge">aka.ms/MSEdge</a>
         </video>
     </div>
-    <div class="background-content">
-        <div class="content content1">
-            <div class="info">
-                <h2>Sobre Nosotros</h2>
-                <p>Descubre nuestra deliciosa cocina con ingredientes frescos y recetas únicas.</p>
-            </div>
-            <div class="imagen">
-                <img class="responsive-img" src="./img/2020-10-22.jpg" alt="Interior acogedor del restaurante">
-            </div>
+<div class="background-content">
+    <div class="content content1">
+        <div class="info">
+            <h2>Sobre Nosotros</h2>
+            <p>En Contoso, creemos que cada comida es una oportunidad para crear recuerdos. Desde nuestra fundación, nos hemos dedicado a ofrecer una experiencia culinaria que combina tradición y creatividad, utilizando solo los ingredientes más frescos y de temporada. Nuestro equipo de chefs, apasionados por la gastronomía, elabora cada plato con esmero, fusionando sabores locales con técnicas innovadoras.</p>
         </div>
-        <div class="content">
-            <h2>Nuestro Menú</h2>
-            <p>Explora nuestra variedad de platos que deleitan el paladar.</p>
-            <img class="responsive-img" src="./img/download.jpg" alt="Plato gourmet del menú">
-        </div>
-        <div class="content">
-            <h2>Visítanos</h2>
-            <p>Estamos ubicados en el corazón de la ciudad, listos para atenderte.</p>
-            <img class="responsive-img" src="./img/bogavante.jpg" alt="Mapa de ubicación del restaurante">
-            
-            
-            <div style="display: flex; justify-content: center; align-items: center; height: 400px; width: 100%;">
-                <div id="bing-map" style="width: 100%; height: 400px;"></div>
-            </div>
-            <script>
-                function loadMap() {
-                    var map = new Microsoft.Maps.Map(document.getElementById("bing-map"), {
-                        zoom: 16,
-                        mapTypeId: Microsoft.Maps.MapTypeId.aerial
-                    });
-                    Microsoft.Maps.loadModule("Microsoft.Maps.Search", function () {
-                        var searchManager = new Microsoft.Maps.Search.SearchManager(map);
-                        var requestOptions = {
-                            bounds: map.getBounds(),
-                            where: "La Chalana, Avenida de Conde de Guadalhorce 95, 33401, Avilés (Asturias)",
-                            callback: function (answer, userData) {
-                                map.setView({
-                                    center: new Microsoft.Maps.Location(answer.results[0].location.latitude, answer.results[0].location.longitude)
-                                });
-                                map.entities.push(new Microsoft.Maps.Pushpin(answer.results[0].location));
-                            }
-                        };
-                        searchManager.geocode(requestOptions);
-                    });
-                }
-            </script>
-            <script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?key=AkLj1p_g1w7lFb8lJZ-XnicObnu2-ydEpmn6eryraluxl_x3bDo0Jx6w58b7ZJt2&callback=loadMap" async defer></script>
-            <a href="https://bingmapsgenerator.github.io" style="display:none;">Microsoft Bing Maps</a>
-        
-        
-        
+        <div class="imagen">
+            <img class="responsive-img" src="./img/2020-10-22.jpg" alt="Interior acogedor del restaurante">
         </div>
     </div>
-    
+    <div class="content content1">
+        <div class="info">
+            <h2>Nuestro Menú</h2>
+            <p>Nuestro menú es un reflejo de nuestra pasión por la buena mesa. Cada plato ha sido cuidadosamente diseñado para ofrecer una experiencia sensorial única, desde entrantes ligeros y refrescantes hasta principales que combinan texturas y sabores sorprendentes. Utilizamos productos locales de la más alta calidad, garantizando frescura y autenticidad en cada bocado. No olvides dejar espacio para nuestros postres artesanales, el cierre perfecto para una comida memorable.</p>
+            <a href="./menu.html"><button class="fluent-button">Ver Menú Completo</button></a>
+        </div>
+        <div class="imagen">
+            <img class="responsive-img" src="./img/download.jpg" alt="Plato gourmet del menú">
+        </div>
+    </div>
+    <div class="content content1">
+        <div class="info">
+            <h2>Visítanos</h2>
+            <p>Nos encontramos en el vibrante corazón de Avilés, en la Avenida de Conde de Guadalhorce 95, un lugar accesible y perfecto para disfrutar de una comida excepcional. Nuestro restaurante combina un diseño elegante con un ambiente cálido y acogedor, ideal tanto para una cena romántica como para celebraciones en grupo. Ven a visitarnos y déjate envolver por la magia de Contoso, donde cada detalle está pensado para hacer de tu visita una experiencia inolvidable.</p>
+        </div>
+        <div class="imagen">
+            <img class="responsive-img" src="./img/bogavante.jpg" alt="Mapa de ubicación del restaurante">
+        </div>
+        <div id="bing-map" style="display: flex; justify-content: center; align-items: center; height: 400px; width: 100%"></div>
+        <script>
+            function loadMap() {
+                var map = new Microsoft.Maps.Map(document.getElementById("bing-map"), {
+                    zoom: 16,
+                    mapTypeId: Microsoft.Maps.MapTypeId.aerial
+                });
+                Microsoft.Maps.loadModule("Microsoft.Maps.Search", function () {
+                    var searchManager = new Microsoft.Maps.Search.SearchManager(map);
+                    var requestOptions = {
+                        bounds: map.getBounds(),
+                        where: "La Chalana, Avenida de Conde de Guadalhorce 95, 33401, Avilés (Asturias)",
+                        callback: function (answer, userData) {
+                            map.setView({
+                                center: new Microsoft.Maps.Location(answer.results[0].location.latitude, answer.results[0].location.longitude)
+                            });
+                            map.entities.push(new Microsoft.Maps.Pushpin(answer.results[0].location));
+                        }
+                    };
+                    searchManager.geocode(requestOptions);
+                });
+            }
+        </script>
+        <script type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol?key=AkLj1p_g1w7lFb8lJZ-XnicObnu2-ydEpmn6eryraluxl_x3bDo0Jx6w58b7ZJt2&callback=loadMap" async defer></script>
+        <a href="https://bingmapsgenerator.github.io" style="display:none;">Microsoft Bing Maps</a>
+    </div>
+</div>
     
     <footer class="footer" style="display: flex; align-items: center; justify-content: space-between; flex-direction: column;">
         <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
             <img src="./img/637211.png" alt="Logo del restaurante" height="50">
             <p>Hecho por Daniel Seisdedos Pérez</p>
-            <p>Restaurante Fluent - Todos los derechos reservados</p>
+            <p>Contoso 2025. Todos los derechos reservados</p>
         </div>
+        <ul class="social-media">
+            <li><a class="social-media" href="https://facebook.com"><img width="65%" src="img/social/Facebook 2x.png" alt="Facebook"></a></li>
+            <li><a class="social-media" href="https://instagram.com"><img width="65%" src="img/social/Instagram 2x.png" alt="Instagram"></a></li>
+            <li><a class="social-media" href="https://twitter.com"><img width="65%" src="img/social/icon-MSCOM-X-64x64.png" alt="Twitter"></a></li>
+            <li><a class="social-media" href="https://linkedin.com"><img width="65%" src="img/social/Linkedin 2x.png" alt="LinkedIn"></a></li>
+        </ul>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

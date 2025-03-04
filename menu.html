@@ -3,49 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <title>Contoso restaurante - Menú</title>
+    <link rel="icon" href="img\favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles.css">
     <style>
         .portada {
             background-image: url('./img/Bogavante-y-centollo-1024x557.jpg');
         }
+        .carta {
+            margin-top: 150px;
+        }
+        @media (max-width: 768px) {
+        .carta {
+        margin-top: 0;
+        }
+}
+        .menu-item {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .menu-item img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        .menu-item h2 {
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        .menu-item .price {
+            font-size: 2em;
+            color: #0078d4; /*Color de acento de Microsoft Outlook*/
+            margin-left: auto;
+            font-weight: bold;
+        }
+
+        .menu-item p {
+            font-size: 1.5em;
+            color: #666666;
+            margin: 5px 0 0;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+        .menu-item h2 {
+            font-size: 1em;
+        }
+            .menu-item p {
+        font-size: 1.2em;
+        }
+    }
     </style>
 </head>
 <body>
     <nav>
-        <img src="./img/637211.png" alt="Logo del restaurante" height="50">
-        <ul>
-            <li><a class="button-menu" href="./index.html">Inicio</a></li>
-            <li><a class="button-menu active" href="./menu.html">Menú</a></li>
-            <li><a class="button-menu" href="./reserva.html">Reservar</a></li>
-            <li><a class="button-menu" href="./enlaces.html">Enlaces</a></li>
-        </ul>
-        <ul>
-            <li><a class="social-media" href="https://facebook.com"><img width="65%" src="img/social/Facebook 2x.png" alt="Facebook"></a></li>
-            <li><a class="social-media" href="https://instagram.com"><img width="65%" src="img/social/Instagram 2x.png" alt="Instagram"></a></li>
-            <li><a class="social-media" href="https://twitter.com"><img width="65%" src="img/social/icon-MSCOM-X-64x64.png" alt="Twitter"></a></li>
-            <li><a class="social-media" href="https://linkedin.com"><img width="65%" src="img/social/Linkedin 2x.png" alt="LinkedIn"></a></li>
-        </ul>
+        <a href="./index.html"><img src="./img/637211.png" alt="Logo del restaurante" height="50"></a>
+        <button class="menu-toggle">☰</button>
+        <div class="menu-container">
+            <ul class="menu">
+                <li><a class="button-menu" href="./index.html">Inicio</a></li>
+                <li><a class="button-menu active" href="./menu.html">Menú</a></li>
+                <li><a class="button-menu" href="./reserva.html">Reservar</a></li>
+            </ul>
+        </div>
     </nav>
     <div class="portada">
         <h1>Nuestro menú</h1>
         <p>Nuestra carta</p>
     </div>
-    <div class="content">
+
+    <!-- Sección de la carta, contiene muchas imagenes, se optimizaron con el formato WEBP,
+     compatible con la mayoria de navegadores como Safari y Microsoft Edge. -->
+
+    <!-- Acerca de las letras Metro, se entrecortan por la parte de arriba y las comprendemos porque
+     nuestra cabeza usa mas la información de la parte de abajo de las letras que de la de arriba -->
+    <div class="content-basic"> 
         <h2 class="metro-text-title">Entrantes</h2>
-        <ul>
-            <li>Ensalada de la casa</li>
-            <li>Patatas bravas</li>
-            <li>Calamares a la romana</li>
-        </ul>
-    </div>
+        <div class="carta">
+            <article class="menu-item">
+            <img src="img\menu\gambas.webp">
+            <div>
+            <h2>Gambas al Ajillo</h2>
+            <p>Gambas frescas salteadas con ajo y perejil.</p>
+            </div>
+            <span class="price">12€</span>
+            </article>
+            <article class="menu-item">
+            <img src="img\menu\mejillones.webp">
+            <div>
+            <h2>Mejillones a la Marinera</h2>
+            <p>Mejillones cocidos en una deliciosa salsa marinera.</p>
+            </div>
+            <span class="price">10€</span>
+            </article>
+            <article class="menu-item">
+            <img src="img\menu\calamares.webp">
+            <div>
+            <h2>Calamares a la Romana</h2>
+            <p>Calamares frescos rebozados y fritos.</p>
+            </div>
+            <span class="price">11€</span>
+            </article>
+            <article class="menu-item">
+            <img src="img\menu\carneVacuno.webp">
+            <div>
+            <h2>Carne vacuno (8pcs)</h2>
+            <p>Deliciosos cortes de carne de vacuno.</p>
+            </div>
+            <span class="price">9€</span>
+            </article>
+        </div>
+
+        <h2 class="metro-text-title">Principales</h2>
+        <div class="carta">
+            <article class="menu-item">
+            <img src="img\menu\bogavante.webp">
+            <div>
+            <h2>Bogavante al horno</h2>
+            <p>Si tiene una cena elegante, llévese un bogavante.</p>
+            </div>
+            <span class="price">34€</span>
+            </article>
+            <article class="menu-item">
+            <img src="img\menu\cigala.webp">
+            <div>
+            <h2>Cigala al horno</h2>
+            <p>Si tiene una cena de gala, llévese una cigala.</p>
+            </div>
+            <span class="price">22€</span>
+            </article>
+            <article class="menu-item">
+            <img src="img\menu\lubina.webp">
+            <div>
+            <h2>Lubina a la sal o al horno</h2>
+            <p>Si tiene una cena muy fina, llévese una lubina.</p>
+            </div>
+            <span class="price">20€</span>
+            </article>
+            <article class="menu-item">
+            <div style="position: relative;">
+                <img src="img\menu\sushi.webp">
+                <img src="img\menu\AntonioRecio.webp" style="position: absolute; bottom: 17px; right: 10px; width: 50px; height: 70px;">
+            </div>
+            <div>
+            <h2>Sushi al estilo Antonio Recio</h2>
+            <p>Si tienes una cena japonesa, ponga un buen sushi en la mesa.</p>
+            </div>
+            <span class="price">15€</span>
+            </article>
+        </div>
+
+        <h2 class="metro-text-title">Postres</h2>
+        <div class="carta">
+            <article class="menu-item">
+            <img src="img\menu\tartaQueso.webp">
+            <div>
+            <h2>Tarta de Queso</h2>
+            <p>Deliciosa tarta de queso con mermelada de frutos rojos.</p>
+            </div>
+            <span class="price">5€</span>
+            </article>
+            <article class="menu-item">
+            <img src="img\menu\tartaRedVelvet.webp">
+            <div>
+            <h2>Tarta de Red Velvet</h2>
+            <p>Esponjosa tarta con sabor increible por dentro y hermosa por fuera.</p>
+            </div>
+            <span class="price">6€</span>
+            </article>
+            <article class="menu-item">
+            <img src="img\menu\heladoVainilla.webp">
+            <div>
+            <h2>Helado de Vainilla</h2>
+            <p>Helado cremoso de vainilla con salsa de chocolate.</p>
+            </div>
+            <span class="price">4€</span>
+            </article>
+            <article class="menu-item">
+            <img src="img\menu\flan.webp">
+            <div>
+            <h2>Flan de Caramelo</h2>
+            <p>Flan suave y cremoso con caramelo.</p>
+            </div>
+            <span class="price">5€</span>
+            </article>
+        </div>
+        <div style="text-align: center">
+            <img src="./img\MariscosRecio.webp" alt="Logo de mariscos recio" >
+            <p>Mariscos otrogados por Maricos Recio, la mar al mejor precio</p>
+        </div>
 
     
     <footer class="footer" style="display: flex; align-items: center; justify-content: space-between; flex-direction: column;">
         <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
             <img src="./img/637211.png" alt="Logo del restaurante" height="50">
             <p>Hecho por Daniel Seisdedos Pérez</p>
-            <p>Restaurante Fluent - Todos los derechos reservados</p>
+            <p>Contoso 2025. Todos los derechos reservados</p>
         </div>
+        <ul class="social-media">
+            <li><a class="social-media" href="https://facebook.com"><img width="65%" src="img/social/Facebook 2x.png" alt="Facebook"></a></li>
+            <li><a class="social-media" href="https://instagram.com"><img width="65%" src="img/social/Instagram 2x.png" alt="Instagram"></a></li>
+            <li><a class="social-media" href="https://twitter.com"><img width="65%" src="img/social/icon-MSCOM-X-64x64.png" alt="Twitter"></a></li>
+            <li><a class="social-media" href="https://linkedin.com"><img width="65%" src="img/social/Linkedin 2x.png" alt="LinkedIn"></a></li>
+        </ul>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

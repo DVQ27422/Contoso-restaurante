@@ -1,43 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <sript></sript>
-    <title>Contoso restaurante - Reserva</title>
+    <meta charset="UTF-8">
+    <title>Contoso restaurante - Reservar</title>
+    <link rel="icon" href="img\favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles.css">
     <style>
         .portada {
-            background-image: url('./img/Bogavante-y-centollo-1024x557.jpg');
+            background-image: url('./img/carne-carta-la-chalana.jpg');
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 400px; /* Ancho máximo ajustable según necesidad */
+            margin: 0 auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidad */
+            border-radius: 8px; /* Bordes redondeados */
+        }
+
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="time"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus,
+        input[type="time"]:focus,
+        input[type="number"]:focus {
+            border-color: #0078d4;
+            outline: none;
         }
     </style>
 </head>
 <body>
     <nav>
-        <img src="./img/637211.png" alt="Logo del restaurante" height="50">
-        <ul>
-            <li><a class="button-menu" href="./index.html">Inicio</a></li>
-            <li><a class="button-menu" href="./menu.html">Menú</a></li>
-            <li><a class="button-menu active" href="./reserva.html">Reservar</a></li>
-            <li><a class="button-menu" href="./enlaces.html">Enlaces</a></li>
-        </ul>
-        <ul>
-            <li><a class="social-media" href="https://facebook.com"><img width="65%" src="img/social/Facebook 2x.png" alt="Facebook"></a></li>
-            <li><a class="social-media" href="https://instagram.com"><img width="65%" src="img/social/Instagram 2x.png" alt="Instagram"></a></li>
-            <li><a class="social-media" href="https://twitter.com"><img width="65%" src="img/social/icon-MSCOM-X-64x64.png" alt="Twitter"></a></li>
-            <li><a class="social-media" href="https://linkedin.com"><img width="65%" src="img/social/Linkedin 2x.png" alt="LinkedIn"></a></li>
-        </ul>
+        <a href="./index.html"><img src="./img/637211.png" alt="Logo del restaurante" height="50"></a>
+        <button class="menu-toggle">☰</button>
+        <div class="menu-container">
+            <ul class="menu">
+                <li><a class="button-menu" href="./index.html">Inicio</a></li>
+                <li><a class="button-menu" href="./menu.html">Menú</a></li>
+                <li><a class="button-menu active" href="./reserva.html">Reservar</a></li>
+            </ul>
+        </div>
     </nav>
     <div class="portada">
         <h1>Reservar</h1>
-        <p>Descubre la mejor carne y el marisco más fresco en Restaurante Fluent. ¡Una experiencia culinaria inigualable!</p>
-    </div>
-    <div class="background-video">
-        <video autoplay muted loop id="background-video">
-            <source src="https://cdn.discordapp.com/attachments/1121920591704895598/1343344982823534642/Background.mp4?ex=67bcef02&is=67bb9d82&hm=eb236a993f3c1e1fbae2f3fcd4e1368a17794643d844da1fdf5ef70f9fc88cba&" type="video/mp4">
-            Tu navegador no soporta el fondo animado. Restaurante Fluent recomienda que use Microsoft Edge <a href="https://aka.ms/MSEdge">aka.ms/MSEdge</a>
-        </video>
+        <p>Descubre la mejor carne y el marisco más fresco en Contoso. ¡Una experiencia culinaria inigualable!</p>
     </div>
     <div class="background-content">
         <h1>Reserva </h1>
+        </ol>
         <form action="/action.php" target="_blank" method="post">
             <table>
                 <tr>
@@ -62,11 +91,17 @@
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: center;">
-                        <button type="submit">Reservar</button>
+                        <button class="fluent-button" type="submit">Reservar</button>
                     </td>
                 </tr>
             </table>
         </form>
+        <p>Metodos de pago aceptados</p>
+        <ol>
+            <li>Apple Pay</li>
+            <li>Mastercard</li>
+            <li>Visa</li>
+        </ol>
     </div>
     
     
@@ -74,8 +109,15 @@
         <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
             <img src="./img/637211.png" alt="Logo del restaurante" height="50">
             <p>Hecho por Daniel Seisdedos Pérez</p>
-            <p>Restaurante Fluent - Todos los derechos reservados</p>
+            <p>Contoso 2025. Todos los derechos reservados</p>
         </div>
+        <ul class="social-media">
+            <li><a class="social-media" href="https://facebook.com"><img width="65%" src="img/social/Facebook 2x.png" alt="Facebook"></a></li>
+            <li><a class="social-media" href="https://instagram.com"><img width="65%" src="img/social/Instagram 2x.png" alt="Instagram"></a></li>
+            <li><a class="social-media" href="https://twitter.com"><img width="65%" src="img/social/icon-MSCOM-X-64x64.png" alt="Twitter"></a></li>
+            <li><a class="social-media" href="https://linkedin.com"><img width="65%" src="img/social/Linkedin 2x.png" alt="LinkedIn"></a></li>
+        </ul>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
